@@ -66,6 +66,8 @@ _main.Rmd
 *.rdb
 *.RData
 *.rdx
+*.zip
 
 2019-124-Survey/
 2021-033-Survey/
+2019-124-Survey_Shared With Amy/
