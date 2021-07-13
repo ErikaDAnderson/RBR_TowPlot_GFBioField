@@ -21,10 +21,10 @@ require(data.table)
 require(ggplot2)
 
 # survey specific variables
-survey <- "2019-124-Survey" # for testing
-# survey <- "2021-033-Survey" 
+# survey <- "2019-124-Survey" # for testing
+survey <- "2021-033-Survey" 
 
-GFBio_input <- paste0(survey, "/GFBIO/FISHING_EVENT-2019-06-30.xlsx")
+GFBio_input <- paste0(survey, "/GFBIO/fishing_events_20210713.xlsx")
 Headrope_input <- paste0(survey, "/HEADROPE")
 Footrope_input <- paste0(survey, "/FOOTROPE")
 
@@ -159,7 +159,9 @@ for (j in unique(plotting_DF$Event))
     geom_hline(yintercept = 15) +
     scale_y_reverse(lim = c(50,0)) + labs(y = "Depth (m)", x = "Time") + 
     ggtitle(paste("Event", j, sep = " "), 
-            subtitle = paste(mean, "\n", median, "\n", warp, "\n", spread, sep = " ")) +
+            subtitle = paste(mean, "\n", median, "\n", 
+                             #warp, "\n", spread, 
+                             sep = " ")) +
     theme_bw()
   
   ggsave(filename = paste("Net Plot", as.character(j), ".png"), plot = last_plot(), path = plot_path, width = 8.5, 
